@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>Add food</h1>
+            <form [formGroup]="foodadd" (ngSubmit)="data()">
+                <div class="form-group">
+                    <label >Food Name</label>
+                    <input [class.is-invalid]="foodadd.get('food_name').invalid && foodadd.get('food_name').touched" class="form-control" type="text" formControlName = 'food_name'>
+                    <ng-container *ngFor="let error of error_message.food_name">
+                        <div  *ngIf="foodadd.get('food_name').hasError(error.type) && (foodadd.get('food_name').dirty || foodadd.get('food_name').touched)">
+                            <small class="text-danger">{{ error.message }}</small> 
+                        </div>
+                    </ng-container>
+                </div>
+                <div class="form-group">
+                    <label >Cost</label>
+                    <input class="form-control" [class.is-invalid]="foodadd.get('cost').invalid && foodadd.get('cost').touched" type="text" formControlName = 'cost'>
+                    <ng-container *ngFor="let error of error_message.cost">
+                        <div  *ngIf="foodadd.get('cost').hasError(error.type) && (foodadd.get('cost').dirty || foodadd.get('cost').touched)">
+                            <small class="text-danger">{{ error.message }}</small> 
+                        </div>
+                    </ng-container>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-12">
+                        <label >Upload Image</label>
+                        <div>
+                            <input class="form-control" type="file" name="image" />
+                        </div>
+                          <br>
+                    </div>
+                </div>
+
+                <!-- <div class="form-group">
+                    <label >Category</label>
+                    <input class="form-control" [class.is-invalid]="foodadd.get('category').invalid && foodadd.get('category').touched" type="text" formControlName = 'category'>
+                    <ng-container *ngFor="let error of error_message.category">
+                        <div  *ngIf="foodadd.get('category').hasError(error.type) && (foodadd.get('category').dirty || foodadd.get('category').touched)">
+                            <small class="text-danger">{{ error.message }}</small> 
+                        </div>
+                    </ng-container>
+                </div> -->
+
+                <div class="form-group">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Category
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                
+                <div class="form-group col-lg-6">
+                    <button class="btn btn-primary mr-1" [disabled]="foodadd.invalid">Add Food</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
