@@ -16,8 +16,9 @@ import { AboutComponent } from './about/about.component';
 import { BookTableComponent } from './book-table/book-table.component';
 import { OrderFoodComponent } from './order-food/order-food.component';
 import { FoodItemsComponent } from './food-items/food-items.component';
+import { CartComponent } from './cart/cart.component';
 @NgModule({
-  declarations: [UsersComponent,LoginComponent,SignupComponent, HeaderComponent, FooterComponent, ContentComponent, AboutComponent, BookTableComponent, OrderFoodComponent, FoodItemsComponent],
+  declarations: [UsersComponent,LoginComponent,SignupComponent, HeaderComponent, FooterComponent, ContentComponent, AboutComponent, BookTableComponent, OrderFoodComponent, FoodItemsComponent, CartComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,
