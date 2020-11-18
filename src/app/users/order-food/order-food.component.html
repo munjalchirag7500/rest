@@ -4,18 +4,18 @@
             <div class="row">
                 <div class="col-lg-2">
                     <nav class="nav nav-tabs d-flex flex-column">
-                        <button class="nav-link mt-1  btn-primary">Breakfast</button>
-                        <button class="nav-link mt-4  btn-secondary">Lunch</button>
-                        <button class="nav-link  mt-4 btn-danger">Dinner</button>
+                        <button class="nav-link mt-1  btn-primary" (click)="fetchFood('Breakfast')" >Breakfast</button>
+                        <button class="nav-link mt-4  btn-secondary" (click)="fetchFood('Lunch')">Lunch</button>
+                        <button class="nav-link  mt-4 btn-danger" (click)="fetchFood('Dinner')">Dinner</button>
                     </nav>
                 </div>
                 <div class="col-lg-10">
-                    <app-food-items></app-food-items>
+                    <app-food-items  [foodItems]="food"></app-food-items>
                 </div>
             </div>
         </div>
         <div class="col-lg-4 no-gutters">
-            <app-cart></app-cart>
+            <app-cart [cartItems]='cartDetail' ></app-cart>
         </div>
     </div>
 </div>

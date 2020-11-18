@@ -4,37 +4,21 @@
                 <table class="col-lg-12 table no-gutters">
                     <thead>
                         <tr>
-                            <th scope="col"> </th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Available</th>
-                            <th scope="col" class="text-center">Quantity</th>
-                            <th scope="col" class="text-right">Price</th>
+                            <th > </th>
+                            <th >Product</th>
+                            <th > </th>
+                            <th  class="text-center">Quantity</th>
+                            <th  class="text-right">Price</th>
                             <th> </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr *ngFor="let cart of cartItems">
                             <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                            <td>Product Name Dada</td>
-                            <td>In stock</td>
+                            <td>{{cart.food_name}}</td>
+                            <td></td>
                             <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right">124,90 €</td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                        </tr>
-                        <tr>
-                            <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                            <td>Product Name Toto</td>
-                            <td>In stock</td>
-                            <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right">33,90 €</td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                        </tr>
-                        <tr>
-                            <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                            <td>Product Name Titi</td>
-                            <td>In stock</td>
-                            <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right">70,00 €</td>
+                            <td class="text-right">{{cart.cost}} Rs</td>
                             <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
                         </tr>
                         <tr>
@@ -43,15 +27,15 @@
                             <td></td>
                             <td></td>
                             <td>Sub-Total</td>
-                            <td class="text-right">255,90 €</td>
+                            <td class="text-right">255,90 Rs</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>Shipping</td>
-                            <td class="text-right">6,90 €</td>
+                            <td></td>
+                            <td class="text-right"></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -59,14 +43,14 @@
                             <td></td>
                             <td></td>
                             <td><strong>Total</strong></td>
-                            <td class="text-right"><strong>346,90 €</strong></td>
+                            <td class="text-right"><strong>346,90 Rs</strong></td>
                         </tr>
                     </tbody>
                 </table>
             
         </div>
         <div class="col-lg-12 no-gutters d-flex justify-content-right text-right">
-            <button class="col-lg-6 offset-6 btn btn-success text-uppercase">Checkout</button>
+            <button (click)="checkOut()" class="col-lg-6 offset-6 btn btn-success text-uppercase">Checkout</button>
         </div>
     </div>
 </div>

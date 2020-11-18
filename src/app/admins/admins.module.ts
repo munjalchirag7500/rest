@@ -18,7 +18,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { SignupComponent } from './pages/signup/signup.component';
-
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     AdminsRoutingModule,FormsModule,ReactiveFormsModule,MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule,
+    MatButtonModule,MatSelectModule
   ]
 })
 export class AdminsModule { }
