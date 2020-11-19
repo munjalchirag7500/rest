@@ -7,7 +7,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class FoodItemsComponent implements OnInit {
   @Input() foodItems;
-  @Output() myevent=new EventEmitter();
   cartDetail;
   foodCart=[];
   constructor() { }
@@ -15,12 +14,6 @@ export class FoodItemsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addc(){
-    this.cartDetail=JSON.parse(localStorage.getItem('CartFood'));
-    console.log(this.cartDetail);
-    this.myevent.emit(this.cartDetail);
-    return this.cartDetail;
-  }
   addtocart(id){
    
   let foodData=this.foodItems.filter((element)=>{
@@ -28,13 +21,7 @@ export class FoodItemsComponent implements OnInit {
   })
   this.foodCart.push(foodData[0]);
   console.log(this.foodCart);
-
   localStorage.setItem('CartFood',JSON.stringify(this.foodCart));
-
-  this.addc();
-
-  
-  
   }
 
 }

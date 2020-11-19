@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BookTableComponent } from './book-table/book-table.component';
+import { CartComponent } from './cart/cart.component';
 import { ContentComponent } from './content/content.component';
 import { FoodItemsComponent } from './food-items/food-items.component';
 import { OrderFoodComponent } from './order-food/order-food.component';
@@ -15,6 +16,8 @@ const routes: Routes = [
       {
         path:'',redirectTo:'order',pathMatch:'full'
       },
+      
+  { path: 'checkout', component: CartComponent },
       {
         path:'order',component:OrderFoodComponent,
         children:[

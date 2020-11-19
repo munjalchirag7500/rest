@@ -23,9 +23,4 @@ export class OrderFoodComponent implements OnInit {
       this.food=this.food.Food;
     })
   }
-
-  updateCart(){
-    this.fic.addc();
-  }
-
 }

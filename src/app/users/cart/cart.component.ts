@@ -6,12 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  @Input() cartItems;
+  cartItems;
 
   
   constructor() { }
 
   ngOnInit(): void {
+    this.cartItems=JSON.parse(localStorage.getItem('CartFood'))
   }
   getCartDetail(){
 
